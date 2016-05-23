@@ -1,0 +1,12 @@
+<div class="panel {{class}}">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <div class="panel-left" ng-class="{'panel-hide':show}">
+                <div class="panel-img" ng-style="panelImg" ng-class="{'panel-hide':!hasIcon}"/></div>
+                {{name}}
+            <div class="panel-right" ng-transclude="title"></div>
+        </div>
+    </div>
+</div>
+    <div class="panel-body" ng-transclude="body"></div>
+</div>

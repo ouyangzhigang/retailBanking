@@ -1,0 +1,20 @@
+<div class="l-main container-fluid">
+    <div class="l-header">
+        <cfo-header></cfo-header>
+    </div>
+    <div class="l-body">
+        <div class="l-menu">
+            <cfo-side-bar>
+                <cfo-side-item ng-repeat="item in vm.concernContent">
+                    <cfo-icon name="item.name" src="item.src"></cfo-icon>
+                </cfo-side-item>
+            </cfo-side-bar>
+        </div>
+        <div class="l-content l-content-default">
+            <cfo-menu-bar items="vm.menus"></cfo-menu-bar>
+            <div class="l-view l-view-default">
+                <div ui-view=""></div>
+            </div>
+        </div>
+    </div>
+</div>

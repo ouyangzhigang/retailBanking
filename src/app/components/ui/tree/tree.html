@@ -1,0 +1,47 @@
+<script type="text/ng-template" id="nodes_renderer.html" >
+    <div ui-tree-handle class="tree-node tree-node-content"  ng-click="selected(this)"  ng-mouseover="onNodes(this)" >
+        {{node.nodrag}}
+        <a class="btn btn-success btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><span
+        class="glyphicon"
+        ng-class="{
+          'glyphicon-plus': collapsed,
+          'glyphicon-minus': !collapsed
+        }" ></span></a>
+        <!-- <a class="pull-left btn btn-primary btn-xs" style="margin-right: 8px;"><span
+            class="glyphicon glyphicon-plus"></span></a>
+        <a class="pull-left btn btn-danger btn-xs" data-nodrag ng-click="treeRemove(this)"><span
+        class="glyphicon glyphicon-remove"></span></a> -->
+        {{node.title}}
+    </div>
+
+
+    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}" >
+        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'" >
+        </li>
+    </ol>
+</script>
+
+<div class="row tree-row">
+    <div class="col-sm-6 tree-col"  data-target="menu-{{ $index }}" context-menu="onShow(this)" context-menu-close="onClose(this)">
+        <div data-ui-tree="options.events"  id="tree-root" data-drag-delay="500" data-drag-enabled="tree.enabled">
+            <ol ui-tree-nodes ng-model="options.data"  >
+                <li ng-repeat="node in options.data" ui-tree-node ng-include="'nodes_renderer.html'"  >
+
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!--右键出现的菜单区域-->
+<div class="dropdown position-fixed" id="menu-{{ $index }}">
+    <ul class="dropdown-menu" role="menu">
+        <li><a class="pointer" role="menuitem" tabindex="1" ng-click="newSubItem(this)">新增节点</a></li>
+        <li><a class="pointer" role="menuitem" tabindex="2" ng-click="treeRemove(this)">删除节点</a></li>
+    </ul>
+</div>
+<style>
+    .position-fixed {
+        position: fixed;
+        color: Red;
+    }
+</style>

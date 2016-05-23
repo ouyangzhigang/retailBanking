@@ -1,0 +1,62 @@
+11<h1 class="login">login state</h1>
+
+<date-range start-date='startDate' end-date='endDate'></date-range>
+<p ng-click="vm.goState('deposit')">Go to Deposit state</p>
+
+<p ng-click="vm.goState('withdraw')">Go to Withdraw state</p>
+
+<cfo-pagination page="vm.page.currentPage" page-size="vm.page.size" total="vm.page.total" paging-action="vm.DoCtrlPagingAct('Paging Clicked', page, size, total)"></cfo-pagination>
+
+<cfo-matrix></cfo-matrix>
+
+<form class="form-horizontal">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="form-group">
+                <label class="control-label col-lg-4 col-md-4 col-sm-4">Email</label>
+                <div class="col-lg-8 col-md-8 col-sm-8">
+                    <form-input option="vm.inputOption"></form-input>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="form-group">
+                <label class="control-label col-lg-4 col-md-4 col-sm-4">Password</label>
+                <div class="col-lg-8 col-md-8 col-sm-8">
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<cfo-form form-class="form-horizontal" option="vm.formOption"></cfo-form>
+
+<button ng-click="vm.showModal()">hello world</button>
+
+<div echart class="barChart" options="vm.barOption"></div>
+
+<div echart class="barChart" options="vm.funnelOption"></div>
+
+<div cfo-funnel class="barChart" options="vm._funnelOption"></div>
+
+<cfo-tab >
+    <cfo-tab-item value="异动客户" active="true">
+        <p>异动客户</p>
+    </cfo-tab-item>
+    <cfo-tab-item value="待跟进客户">
+        <p>待跟进客户</p>
+    </cfo-tab-item>
+    <cfo-tab-item value="潜在客户">
+        <p>潜在客户</p>
+    </cfo-tab-item>
+    <cfo-tab-item value="客户概况">
+        <p>客户概况</p>
+    </cfo-tab-item>
+    <cfo-tab-item value="客户查询">
+        <p>客户查询</p>
+    </cfo-tab-item>
+    <cfo-tab-item value="高级搜索">
+        <p>高级搜索</p>
+    </cfo-tab-item>
+</cfo-tab>

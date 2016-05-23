@@ -1,0 +1,7 @@
+<cfo-panel>
+    <panel-title>工作任务处理明细</panel-title>
+    <panel-body>
+        <div class="grid" ui-grid="vm.gridOptions"></div>
+        <cfo-pagination page="vm.page.currentPage" page-size="vm.page.pageSize" total="vm.page.total" paging-action="vm.DoCtrlPagingAct('Paging Clicked', page, pageSize, total)"></cfo-pagination>
+    </panel-body>
+</cfo-panel>

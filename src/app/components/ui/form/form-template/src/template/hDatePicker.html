@@ -1,0 +1,14 @@
+<div class="form-group schema-form-{{form.type}} {{form.htmlClass}}"
+    ng-class="{'has-error': form.disableErrorState !== true && hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess(), 'has-feedback': form.feedback !== false }">
+    <label class="control-label {{form.labelHtmlClass}}"
+        ng-class="{'sr-only': !showTitle()}"
+        for="{{form.key.slice(-1)[0]}}">{{form.title}}</label>
+    <div class="{{form.divClass}}">
+        <div class="input-group input-large date-picker input-daterange" data-date="{{form.startDate}}" data-date-format="{{form.dateFormat}}">
+            <input type="text" class="form-control" uib-datepicker-popup="{{form.format}}" ng-model="$$value$$" is-open="form.opened" datepicker-options="form.dateOptions" close-text="Close" alt-input-formats="form.altInputFormats" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="buttonClick($event, form)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+    </div>
+</div>

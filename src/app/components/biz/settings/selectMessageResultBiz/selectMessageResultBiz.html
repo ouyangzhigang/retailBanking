@@ -1,0 +1,7 @@
+<panel>
+    <panel-title>查询结果</panel-title>
+    <panel-body>
+        <div class="grid" ui-grid ="vm.gridOptions"></div>
+        <cfo-pagination page="vm.page.currentPage" page-size="vm.page.pageSize" total="vm.page.total" paging-action="vm.DoCtrlPagingAct('Paging Clicked', page, pageSize, total)"></cfo-pagination>
+    </panel-body>
+</panel>
