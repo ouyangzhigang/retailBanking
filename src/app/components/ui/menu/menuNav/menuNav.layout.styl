@@ -1,4 +1,83 @@
-.menu-bar
-    .md-menu
-        button
-            padding:0 20px 0 20px;
+body
+    -webkit-font-smoothing antialiased
+.menu-nav
+    margin 0 0 15px 0
+    background white
+    height 35px
+.menu-list
+    position relative
+    display inline-block
+    padding 0 21px
+    height 35px
+    line-height 35px
+    &:hover
+        background #efefef
+        cursor pointer
+    .circle-static
+        position absolute
+        left 0%
+        top 0%
+        width 100%
+        height 100%
+        background rgba(155, 155, 155, 0.35)
+        transition all .4s cubic-bezier(.25,.8,.25,1)
+        transition-duration 200ms
+        opacity 0
+    .rubberBand
+        opacity 1 !important
+    .zoomIn
+        opacity 1 !important
+.display-menu-content
+    position absolute
+    left 0
+    top 100%
+    z-index 0
+    background rgba(251, 251, 251, .95)
+    padding 16px 0
+    max-height none
+    min-width 320px
+    display flex
+    box-shadow 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12)
+    transform-origin left top 0px
+    flex-direction column
+    transition all 95ms
+    .display-menu-list
+        position relative
+        line-height 35px
+        font-size 15px
+        padding 0 21px
+        cursor pointer
+        user-select none
+        &:hover
+            background-color rgba(158,158,158,0.2)
+        &:active
+            background-color rgba(135,135,135,.3)
+        .fa-caret-right
+            font-size 20px
+            line-height 35px
+            margin-right 15px
+.displaying
+    animation displaying .25s linear
+.displayings
+    animation displaying .15s linear
+.right-menu-content
+    position absolute
+    left 100%
+    top 0
+    z-index 0
+    background rgba(251, 251, 251, .95)
+    padding 16px 0
+    min-width 320px
+    max-height none
+    box-shadow 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12)
+    .right-menu-list
+        position relative
+        line-height 35px
+        font-size 15px
+        padding 0 21px
+        cursor pointer
+        user-select none
+        &:hover
+            background-color rgba(158,158,158,0.2)
+        &:active
+            background-color rgba(135,135,135,.3)
